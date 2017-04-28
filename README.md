@@ -6,7 +6,7 @@ Please see this paper for the background and rationale. The main aim of this stu
 
 All tools and data are freely available. Analysis is carried out using PostGIS with OpenStreetMap geographical data and UK Department of Transport traffic counts. It is assumed that you have already set up PostGIS and are able to import data and run queries.
 
-The following steps give a demo to generate routing importance for the Isle of Wight (a managable sized dataset which is well defined geographically). For very large datasets (e.g. the whole UK), the geographic data need to be split into more managable chunks as Dijkstra is a greedy algorithm. More detail on what is actually going on is given in the scripts themselves
+The following steps give a demo to generate routing importance for the Isle of Wight (https://goo.gl/maps/jSd8BwtXNgt) (a managable sized dataset which is well defined geographically). For very large datasets (e.g. the whole UK), the geographic data need to be split into more managable chunks as Dijkstra is a greedy algorithm. More detail on what is actually going on is given in the scripts themselves
 
 After downloading and importing the data, a method to assign actual counts to major roads is given before moving on to the method for assessing minor road importance.
 
@@ -48,7 +48,26 @@ After downloading and importing the data, a method to assign actual counts to ma
 
 ![iow1](/png/iow1.PNG)
 
-- Note that coastal areas cannot be defined in this way. These are dealt with as on the basis of grouping as those only being able to access other minor roads without crossing a major road.
+- Note that coastal areas cannot be defined in this way. These are dealt with as on the basis of grouping as those only being able to access other minor roads without crossing a major road. Individual groups are shown coloured below.
 
 ![iow2](/png/iow2.PNG)
+
+### (7) RUN THE ROUTING ANALYSIS
+- Work through the 'minor_assignment_routing.sql' script 
+- This runs the Dijkstra algorithm for the major road enclosed areas, then the coastal minor roads
+- The results is the table 'totals' which contains a raw count of how many times each road was transversed during the routing iterations.
+
+### (8) STANDARDISING THE RAW COUNTS
+- Work through the 'minor_assignment_index.sql' script 
+- Raw counts need to be standardised as the count is dependent on the number of roads in an area and the associated number of source and target points. Standardisation is carried out here by dividing the total count per area, by the number of road links within that AOI.
+
+![iow3](/png/iow3.PNG)
+- The final results. Red roads are the major roads to which actual traffic counts were assigned in (5). Minor roads are blue and are shaded according to the estimated index of importance (darker is more important).
+
+![iow4](/png/iow4.PNG)
+- Detail of the final results.
+
+
+
+
 
