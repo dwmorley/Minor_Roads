@@ -7,7 +7,7 @@ REM Ensure postgres details are correct for your system
 set PSQL="C:\Program Files\PostgreSQL\9.4\bin\psql"
 set PGPORT=5432
 set PGHOST=localhost
-set PGPASSWORD=astr2n2m
+set PGPASSWORD=*******
 
 REM P:\osm2po-5.0.0\hh is where the output from importOSM.bat was stored
 P:
