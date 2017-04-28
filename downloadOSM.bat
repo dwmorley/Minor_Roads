@@ -1,4 +1,7 @@
+REM ################################################
 REM download OSM data from geofabrik using osm2po
+REM ################################################
+REM 
 REM see http://osm2po.de/
 REM select your .bz2 from http://download.geofabrik.de
 
