@@ -60,11 +60,19 @@ After downloading and importing the data, a method to assign actual counts to ma
 ### (8) STANDARDISING THE RAW COUNTS
 - Work through the 'minor_assignment_index.sql' script 
 - Raw counts need to be standardised as the count is dependent on the number of roads in an area and the associated number of source and target points. Standardisation is carried out here by dividing the total count per area, by the number of road links within that AOI.
+- The final results. Red roads are the major roads to which actual traffic counts were assigned in (5). Minor roads are blue and are shaded according to the estimated index of importance (darker is more important).
 
 ![iow3](/png/iow3.PNG)
 ![iow4](/png/iow4.PNG)
-- The final results. Red roads are the major roads to which actual traffic counts were assigned in (5). Minor roads are blue and are shaded according to the estimated index of importance (darker is more important).
 
+### (9) NEXT STEPS
+- The estimated minor road importance index needs to be translated into a traffic count value for application in noise and air pollution models. This is an area that needs further work. In the paper, Morley and Gulliver (2016), a method is presented using a Poisson regression model using a small set of DfT counts on minor roads as a training set. The regression equation was as follows:
+
+```
+AADT ~ log(route importance) + (OSM Road Type) + log(AADT on nearest major road) + (Urban or Rural)
+```
+
+- There are clear limitations with this method that are discussed in the accompanying paper. The overall aim here was to provide an acceptable correction to the problem of noise models being generated using constant traffic flows on minor roads.
 
 
 
