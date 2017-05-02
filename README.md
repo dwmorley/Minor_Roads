@@ -65,6 +65,7 @@ After downloading and importing the data, a method to assign actual counts to ma
 
 ![iow3](/png/iow3.PNG)
 ![iow4](/png/iow4.PNG)
+![iow5](/png/iow5.PNG)
 
 ### (9) NEXT STEPS
 - The estimated minor road importance index needs to be translated into a traffic count value for application in noise and air pollution models. This is an area that needs further work. In the paper, Morley and Gulliver (2016), a method is presented using a Poisson regression model using a small set of DfT counts on minor roads as a training set. The regression equation was as follows:
