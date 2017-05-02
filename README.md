@@ -19,7 +19,7 @@ After downloading and importing the data, a method to assign actual counts to ma
 
 ### (2) DATA NEEDED
 - [DfT traffic counts](http://www.dft.gov.uk/traffic-counts/download.php) (2013 provided here in data folder)
-- [OSM](https://www.openstreetmap.org/) data in various formats (see http://download.geofabrik.de/ for URLs needed in step 3)
+- [OSM](https://www.openstreetmap.org/) data in various formats (see [Geofabrik](http://download.geofabrik.de/) for URLs needed in step 3)
 
 ### (3) DOWNLOAD OSM DATA
 - Edit the file 'downloadOSM.bat' using a text editor
