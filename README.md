@@ -1,6 +1,7 @@
 # Minor Roads: A method to estimate the importance of minor roads in terms of traffic flow
 
-### This method is presented in: Morley, D.W., Gulliver, J., Methods to improve traffic flow and noise exposure estimation on minor roads,  Environmental Pollution (2016), http://dx.doi.org/10.1016/j.envpol.2016.06.042 
+### This method is presented in: 
+**_Morley, D.W., Gulliver, J., Methods to improve traffic flow and noise exposure estimation on minor roads,  Environmental Pollution (2016), http://dx.doi.org/10.1016/j.envpol.2016.06.042_**
 
 Please see this paper for the background and rationale. The main aim of this study was to try and improve noise exposure estimates for people living in residential areas. Although a good coverage of traffic counts are available for major roads, minor roads are often assined a constant daily vehicle flow. This is a problem for exposure estimates as noise predictions are reliant on accurate traffic flow data. Here, we attempt to use network routing (similar to SatNav applications) to indentify which minor roads are most commonly used within the road network and assign an importance index accordingly. This can then be used to relate to traffic levels. 
 
