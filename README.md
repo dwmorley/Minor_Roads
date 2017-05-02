@@ -44,19 +44,19 @@ After downloading and importing the data, a method to assign actual counts to ma
 
 ### (6) PREPARE MINOR ROADS DATA
 - Work through the 'minor_assignment_dataprep.sql' script 
-- Minor roads are handled in groups defined by distinct areas bounded by major roads (that is distinct networks of minor roads only accessible to each other without a major road being crossed. Think of the holes a net pattern created by the major road network).
-- In the image below, major roads are red. Two polygons are shown in blue, each containing a network of minor roads. Source points are taken as where minor roads join the major roads. Target points are all other road links within the polygon.
+- Minor roads are handled in groups defined by distinct areas bounded by major roads (that is distinct networks of minor roads only accessible to each other without a major road being crossed. Think of the holes in a net pattern created by the major road network).
+- In the image below, major roads are red. Two polygons are shown in blue, each containing a network of minor roads. Source points are taken as where minor roads join the major roads. Target points are all other road links within the polygon. Bridges and Tunnels over/under a major road are excluded as source points.
 
 ![iow1](/png/iow1.PNG)
 
-- Note that coastal areas cannot be defined in this way. These are dealt with as on the basis of grouping as those only being able to access other minor roads without crossing a major road. Individual groups are shown coloured below.
+- Note that coastal areas cannot be defined in this way (major road enclosed polygon). These are dealt with as on the basis of grouping as those only being able to access other minor roads without crossing a major road. Individual groups are shown coloured below.
 
 ![iow2](/png/iow2.PNG)
 
 ### (7) RUN THE ROUTING ANALYSIS
 - Work through the 'minor_assignment_routing.sql' script 
 - This runs the Dijkstra algorithm for the major road enclosed areas, then the coastal minor roads
-- The results is the table 'totals' which contains a raw count of how many times each road was transversed during the routing iterations.
+- The results is the table 'totals' which contains a raw count of how many times each road (by id attribute) was transversed during the routing iterations.
 
 ### (8) STANDARDISING THE RAW COUNTS
 - Work through the 'minor_assignment_index.sql' script 
