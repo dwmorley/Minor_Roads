@@ -6,7 +6,7 @@ Please see this paper for the background and rationale. The main aim of this stu
 
 All tools and data are freely available. Analysis is carried out using PostGIS with OpenStreetMap geographical data and UK Department of Transport traffic counts. It is assumed that you have already set up PostGIS and are able to import data and run queries.
 
-The following steps give a demo to generate routing importance for the [Isle of Wight](https://goo.gl/maps/jSd8BwtXNgt) (a managable sized dataset which is well defined geographically). For very large datasets (e.g. the whole UK), the geographic data need to be split into more managable chunks as Dijkstra is a greedy algorithm. More detail on what is actually going on is given in the scripts themselves
+The following steps give a demo to generate routing importance for the [Isle of Wight](https://goo.gl/maps/jSd8BwtXNgt) (a managable sized dataset which is well defined geographically). For very large datasets (e.g. the whole UK), the geographic data need to be split into more managable chunks as [Dijkstra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) is a greedy algorithm. More detail on what is actually going on is given in the scripts themselves
 
 After downloading and importing the data, a method to assign actual counts to major roads is given before moving on to the method for assessing minor road importance.
 
