@@ -1,25 +1,25 @@
 # Minor Roads: A method to estimate the importance of minor roads in terms of traffic flow
 
-### This method is presented in: Morley, D.W., Gulliver, J., Methods to improve trafficflow and noise exposure estimation on minor roads,  Environmental Pollution (2016), http://dx.doi.org/10.1016/j.envpol.2016.06.042 
+### This method is presented in: Morley, D.W., Gulliver, J., Methods to improve traffic flow and noise exposure estimation on minor roads,  Environmental Pollution (2016), http://dx.doi.org/10.1016/j.envpol.2016.06.042 
 
-Please see this paper for the background and rationale. The main aim of this study was to try and improve noise exposure estimates for people living in residential areas. Although a good coverage of traffic counts are available for major roads, minor roads are often assined a constant daily vehicle flow. This is a problem for exposure estimates as noise predictions are reliant on accurate traffic flow data. H ere, we attempt to use network routing (similar to SatNav applications) to indentify which minor roads are most commonly used within the road network and assign an importance index accordingly. This can then be used to relate to traffic levels. 
+Please see this paper for the background and rationale. The main aim of this study was to try and improve noise exposure estimates for people living in residential areas. Although a good coverage of traffic counts are available for major roads, minor roads are often assined a constant daily vehicle flow. This is a problem for exposure estimates as noise predictions are reliant on accurate traffic flow data. Here, we attempt to use network routing (similar to SatNav applications) to indentify which minor roads are most commonly used within the road network and assign an importance index accordingly. This can then be used to relate to traffic levels. 
 
 All tools and data are freely available. Analysis is carried out using PostGIS with OpenStreetMap geographical data and UK Department of Transport traffic counts. It is assumed that you have already set up PostGIS and are able to import data and run queries.
 
-The following steps give a demo to generate routing importance for the Isle of Wight (https://goo.gl/maps/jSd8BwtXNgt) (a managable sized dataset which is well defined geographically). For very large datasets (e.g. the whole UK), the geographic data need to be split into more managable chunks as Dijkstra is a greedy algorithm. More detail on what is actually going on is given in the scripts themselves
+The following steps give a demo to generate routing importance for the [Isle of Wight](https://goo.gl/maps/jSd8BwtXNgt) (a managable sized dataset which is well defined geographically). For very large datasets (e.g. the whole UK), the geographic data need to be split into more managable chunks as Dijkstra is a greedy algorithm. More detail on what is actually going on is given in the scripts themselves
 
 After downloading and importing the data, a method to assign actual counts to major roads is given before moving on to the method for assessing minor road importance.
 
 
 ### (1) SOFTWARE NEEDED
-- PostGIS, a spatially enabled PostgreSQL database (http://postgis.net/)
-- pgRouting, the routing extension for PostGIS (http://pgrouting.org/)
-- osm2po, an application to download and import OSM data (http://osm2po.de/)
-- QGIS, a desktop GIS very useful for viewing PostGIS output (http://www.qgis.org/en/site/)
+- [PostGIS](http://postgis.net/), a spatially enabled PostgreSQL database
+- [pgRouting](http://pgrouting.org/), the routing extension for PostGIS
+- [osm2po](http://osm2po.de/), an application to download and import OSM data 
+- [QGIS](http://www.qgis.org/en/site/), a desktop GIS very useful for viewing PostGIS output 
 
 ### (2) DATA NEEDED
-- DfT traffic counts (http://www.dft.gov.uk/traffic-counts/download.php) (2013 provided here in data folder)
-- OSM data in various formats (see http://download.geofabrik.de/ for URLs needed in step 3)
+- [DfT traffic counts](http://www.dft.gov.uk/traffic-counts/download.php) (2013 provided here in data folder)
+- [OSM](https://www.openstreetmap.org/) data in various formats (see http://download.geofabrik.de/ for URLs needed in step 3)
 
 ### (3) DOWNLOAD OSM DATA
 - Edit the file 'downloadOSM.bat' using a text editor
